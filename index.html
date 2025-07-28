@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="PlantCaducues Project Page">
-  <meta property="og:title" content="PlantCaducues"/>
-  <meta property="og:description" content="PlantCaduceus: Cross-species Modeling of Plant Genomes at Single Nucleotide Resolution"/>
+  <meta name="description" content="PlantCaduceus (PlantCAD) Project Page">
+  <meta property="og:title" content="PlantCaduceus (PlantCAD)"/>
+  <meta property="og:description" content="PlantCaduceus (PlantCAD): Cross-species Modeling of Plant Genomes at Single Nucleotide Resolution"/>
   <meta property="og:url" content="https://kuleshov-group.github.io/caduceus.github.io/"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/images/caduceus.png" />
@@ -47,7 +47,7 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">
             <img src="static/images/favicon.ico" alt="Caduceus" style="width:50px;height:50px;">
-            PlantCaduceus: Cross-species Modeling of Plant Genomes at Single Nucleotide Resolution
+            PlantCaduceus (PlantCAD): Cross-species Modeling of Plant Genomes at Single Nucleotide Resolution
           </h1>
           <div class="is-size-5 publication-authors">
             <!-- Paper authors -->
@@ -65,6 +65,9 @@
             </span>
             <span class="author-block">
                 <a href="https://www.maizegenetics.net/zong-yan-liu" target="_blank">Zong-Yan Liu<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=0WWjIfAAAAAJ&hl=zh-TW" target="_blank">Wei-Yun Lai<sup>1</sup></a>,
             </span>
             <span class="author-block">
                 <a href="https://www.maizegenetics.net/zackmiller" target="_blank">Zachary R. Miller<sup>1</sup></a>,
@@ -89,28 +92,28 @@
             <span class="author-block">
               <sup>1</sup>
               Cornell University&nbsp;
-              <img src="static/images/cornell.png" alt="Cornell" style="float:right;width:30px;height:30px;">
+              <img src="static/images/cornell.png" alt="Cornell University Logo" style="float:right;width:30px;height:30px;">
             </span>
             <span class="author-block">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>
               USDA-ARS&nbsp;
-              <img src="static/images/USDA.png" alt="USDA" style="float:right;width:40px;height:30px;">
+              <img src="static/images/USDA.png" alt="USDA-ARS Logo" style="float:right;width:40px;height:30px;">
             </span>
             <span class="author-block">
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>3</sup>
               Cold Spring Harbor Laboratory&nbsp;
-              <img src="static/images/CSHL.webp" alt="CSHL" style="float:right;width:60px;height:30px;">
+              <img src="static/images/CSHL.webp" alt="Cold Spring Harbor Laboratory Logo" style="float:right;width:60px;height:30px;">
               </span>
           </div>
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- ArXiv abstract Link -->
               <span class="link-block">
-                <a href="https://www.biorxiv.org/content/10.1101/2024.06.04.596709v2" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://doi.org/10.1073/pnas.2421738122" target="_blank" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>bioRxiv</span>
+                  <span>PNAS</span>
                 </a>
               </span>
               <!-- Github link -->
@@ -150,10 +153,28 @@
 
       </p>
     </div>
-    <img src="static/images/Transfer-to-crops.png" alt="Model plant to crops" style="width:70%;height:70%; display: block; margin-left: auto; margin-right: auto;"/>
+    <img src="static/images/Transfer-to-crops.png" alt="Model plant to crops" style="width:70%;height:70%; display: block; margin-left: auto; margin-right: auto;" loading="lazy"/>
   </div>
 </section>
 <!-- End Introduction-->
+
+<!-- Key Features -->
+<section class="section" id="Key Features">
+  <div class="container is-max-desktop">
+    <h2 class="title">Key Features</h2>
+    <div class="content is-medium">
+      <ul>
+        <li><strong>Cross-species modeling:</strong> Trained on 16 Angiosperm genomes spanning 160 million years of evolutionary history</li>
+        <li><strong>Single nucleotide resolution:</strong> Processes 512 base pair windows tokenized at single nucleotide level</li>
+        <li><strong>State-of-the-art architecture:</strong> Built on Caduceus and Mamba architectures for efficient sequence modeling</li>
+        <li><strong>Superior performance:</strong> Outperforms existing models on gene annotation tasks with up to 7.23-fold improvement</li>
+        <li><strong>Zero-shot mutation analysis:</strong> Identifies deleterious mutations without additional training</li>
+        <li><strong>Agricultural applications:</strong> Successfully identifies causal mutations like the sweet corn Su1 variant</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- End Key Features-->
 
 <!-- Introduction -->
 <section class="section" id="Introduction">
@@ -174,11 +195,11 @@
     <h2 class="title">Introducing PlantCaduceus</h2>
     <div class="content is-medium">
       <p class="justified-text">
-      PlantCaduceus builds upon Caduceus <a href="https://arxiv.org/abs/2403.03234" target="_blank">(Schiff et al., 2024)</a> and Mamba <a href="https://arxiv.org/abs/2312.00752" target="_blank">(Gu et al., 2023)</a> architectures to model diverse  genomes at single nucleotide resolution. PlantCaduceus is trained on 16 Angiosperm genomes spanning 160 million years of evolutionary history, to capture evolutionary conservation and variation across species. PlantCaduceus takes 512 base pair (bp) windows of input sequences, tokenizing them into single nucleotides, and is pre-trained using a masked language modeling objective.
+      PlantCaduceus (PlantCAD) builds upon Caduceus <a href="https://arxiv.org/abs/2403.03234" target="_blank">(Schiff et al., 2024)</a> and Mamba <a href="https://arxiv.org/abs/2312.00752" target="_blank">(Gu et al., 2023)</a> architectures to model diverse  genomes at single nucleotide resolution. PlantCaduceus is trained on 16 Angiosperm genomes spanning 160 million years of evolutionary history, to capture evolutionary conservation and variation across species. PlantCaduceus takes 512 base pair (bp) windows of input sequences, tokenizing them into single nucleotides, and is pre-trained using a masked language modeling objective.
       </p>      
     </div>
     <div class="columns is-centered">
-      <img src="static/images/PlantCaduceus.png" alt="Pretraining of PlantCaduceus" style="width:70%;height:70%; display: block; margin-left: auto; margin-right: auto;"/>
+      <img src="static/images/PlantCaduceus.png" alt="Pretraining of PlantCaduceus" style="width:70%;height:70%; display: block; margin-left: auto; margin-right: auto;" loading="lazy"/>
     </div>
   </div>
 </section>
@@ -212,7 +233,7 @@
     </div>
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <img src="static/images/experiments/Modeling_translation.png" alt="Modeling translation" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;">
+        <img src="static/images/experiments/Modeling_translation.png" alt="Modeling translation" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;" loading="lazy">
       </div>
     </div>
     
@@ -227,7 +248,7 @@
     </div>
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <img src="static/images/experiments/Modeling_transcription.png" alt="Modeling transcription" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;">
+        <img src="static/images/experiments/Modeling_transcription.png" alt="Modeling transcription" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;" loading="lazy">
       </div>
     </div>
 
@@ -245,7 +266,7 @@
     </div>
     <div class="columns is-centered">
       <div class="column is-four-fifths">
-        <img src="static/images/experiments/Deleterious_mutations.png" alt="Deleterious mutations" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;">
+        <img src="static/images/experiments/Deleterious_mutations.png" alt="Deleterious mutations" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;" loading="lazy">
       </div>
     </div>
     <div>
@@ -257,7 +278,7 @@
       </p>
       <div class="columns is-centered">
         <div class="column is-four-fifths">
-          <img src="static/images/experiments/Su1.jpg" alt="Deleterious mutations" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;">
+          <img src="static/images/experiments/Su1.jpg" alt="Sweet corn Su1 gene analysis" style="width:100%;height:100%; display: block; margin-left: auto; margin-right: auto;" loading="lazy">
         </div>
       </div>
     </div>
@@ -285,15 +306,16 @@
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-        @article {Zhai2024.06.04.596709,
-          author = {Zhai, Jingjing and Gokaslan, Aaron and Schiff, Yair and Berthel, Ana and Liu, Zong-Yan and Miller, Zachary R and Scheben, Armin and Stitzer, Michelle C and Romay, Cinta and Buckler, Edward S. and Kuleshov, Volodymyr},
-          title = {Cross-species plant genomes modeling at single nucleotide resolution using a pre-trained DNA language model},
-          elocation-id = {2024.06.04.596709},
-          year = {2024},
-          doi = {10.1101/2024.06.04.596709},
-          URL = {https://www.biorxiv.org/content/early/2024/06/05/2024.06.04.596709},
-          eprint = {https://www.biorxiv.org/content/early/2024/06/05/2024.06.04.596709.full.pdf},
-          journal = {bioRxiv}
+        @article{zhai2025plantcaduceus,
+          author = {Zhai, Jingjing and Gokaslan, Aaron and Schiff, Yair and Berthel, Ana and Liu, Zong-Yan and Lai, Wei-Yun and Miller, Zachary R and Scheben, Armin and Stitzer, Michelle C and Romay, Cinta and Buckler, Edward S. and Kuleshov, Volodymyr},
+          title = {PlantCaduceus: Cross-species modeling of plant genomes at single nucleotide resolution},
+          journal = {Proceedings of the National Academy of Sciences},
+          volume = {},
+          number = {},
+          pages = {},
+          year = {2025},
+          doi = {10.1073/pnas.2421738122},
+          URL = {https://doi.org/10.1073/pnas.2421738122}
       }      
       </code></pre>
     </div>
