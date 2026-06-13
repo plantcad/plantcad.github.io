@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Live Hugging Face download totals for the PlantCAD model family">
+  <meta name="description" content="Daily Hugging Face download totals for the PlantCAD model family">
   <meta property="og:title" content="PlantCAD model downloads"/>
-  <meta property="og:description" content="Live all-time Hugging Face download totals for PlantCAD and PlantCaduceus models"/>
+  <meta property="og:description" content="Daily all-time Hugging Face download totals for PlantCAD and PlantCaduceus models"/>
   <meta property="og:url" content="https://plantcad.github.io/downloads.html"/>
   <meta property="og:image" content="static/images/favicon.ico" />
 
@@ -60,7 +60,7 @@
           <div class="downloads-coverage-underline" aria-hidden="true"></div>
           <p class="downloads-live-line">
             <span class="downloads-live-dot" aria-hidden="true"></span>
-            <span id="downloads-live-copy">live from the Hugging Face API</span>
+            <span id="downloads-live-copy">Loading local download snapshot...</span>
           </p>
           <p id="downloads-meta" class="downloads-meta"></p>
         </div>
@@ -77,7 +77,7 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div id="downloads-status" class="downloads-status" role="status" aria-live="polite">
-        Fetching live download data from the Hugging Face API...
+        Loading the local download snapshot...
       </div>
 
       <div id="downloads-results" class="is-hidden">
@@ -92,12 +92,13 @@
         <div class="downloads-methodology">
           <p class="downloads-eyebrow">REPRODUCIBILITY</p>
           <p>
-            Data is fetched live from the Hugging Face API each time this page loads.
-            The data above was loaded at <time id="downloads-loaded-at"></time>.
+            Data is refreshed daily by GitHub Actions and served from this site's static
+            <code>downloads.json</code> snapshot. Snapshot updated at
+            <time id="downloads-loaded-at"></time>.
           </p>
           <p class="downloads-endpoint">
-            <a id="downloads-endpoint-link" href="https://huggingface.co/api/models?author=kuleshov-group&expand[]=downloadsAllTime&limit=1000" target="_blank" rel="noopener">
-              https://huggingface.co/api/models?author=kuleshov-group&amp;expand[]=downloadsAllTime&amp;limit=1000
+            <a id="downloads-endpoint-link" href="https://huggingface.co/api/models?author=kuleshov-group&expand[]=downloadsAllTime" target="_blank" rel="noopener">
+              https://huggingface.co/api/models?author=kuleshov-group&amp;expand[]=downloadsAllTime
             </a>
           </p>
         </div>

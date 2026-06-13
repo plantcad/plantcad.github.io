@@ -1,0 +1,91 @@
+name: Update download snapshot
+
+on:
+  schedule:
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-downloads:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Hugging Face download totals
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          import urllib.request
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          CONFIG = {
+              "org": "kuleshov-group",
+              "patterns": ["plantcad", "plantcaduceus"],
+              "limit": 1000,
+              "output": Path("downloads.json"),
+          }
+
+          source_url = (
+              "https://huggingface.co/api/models"
+              f"?author={CONFIG['org']}&expand[]=downloadsAllTime"
+          )
+          fetch_url = f"{source_url}&limit={CONFIG['limit']}"
+
+          request = urllib.request.Request(
+              fetch_url,
+              headers={"User-Agent": "plantcad-download-snapshot/1.0"},
+          )
+          with urllib.request.urlopen(request, timeout=30) as response:
+              payload = json.load(response)
+
+          if not isinstance(payload, list):
+              raise TypeError("Expected Hugging Face API to return a JSON array")
+
+          patterns = [re.compile(re.escape(pattern), re.IGNORECASE) for pattern in CONFIG["patterns"]]
+          models = []
+          for model in payload:
+              model_id = model.get("id")
+              if not isinstance(model_id, str) or "/" not in model_id:
+                  continue
+
+              repo_name = model_id.rsplit("/", 1)[1]
+              if not any(pattern.search(repo_name) for pattern in patterns):
+                  continue
+
+              downloads = model.get("downloadsAllTime", 0)
+              models.append({
+                  "id": model_id,
+                  "downloads": downloads if isinstance(downloads, int) else 0,
+              })
+
+          models.sort(key=lambda item: (-item["downloads"], item["id"].lower()))
+          snapshot = {
+              "updated": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+              "source": source_url,
+              "total": sum(model["downloads"] for model in models),
+              "count": len(models),
+              "models": models,
+          }
+
+          CONFIG["output"].write_text(json.dumps(snapshot, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Commit snapshot if changed
+        run: |
+          if git diff --quiet -- downloads.json; then
+            echo "downloads.json is unchanged"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads.json
+          git commit -m "Update download snapshot"
+          git push
