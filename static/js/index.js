@@ -1,21 +1,31 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-
-$(document).ready(function() {
-    // Check for click events on the navbar burger icon
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.navbar-burger').forEach(function(burger) {
+        burger.addEventListener('click', function() {
+            var target = document.getElementById(burger.dataset.target);
+            burger.classList.toggle('is-active');
+            burger.setAttribute('aria-expanded', String(burger.classList.contains('is-active')));
+            if (target) {
+                target.classList.toggle('is-active');
+            }
+        });
+    });
 
     var options = {
-			slidesToScroll: 1,
-			slidesToShow: 1,
-			loop: true,
-			infinite: true,
-			autoplay: true,
-			autoplaySpeed: 5000,
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        loop: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+    };
+
+    if (window.bulmaCarousel) {
+        bulmaCarousel.attach('.carousel', options);
     }
 
-		// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
-	
-    bulmaSlider.attach();
-
-})
+    if (window.bulmaSlider) {
+        bulmaSlider.attach();
+    }
+});

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Live Hugging Face download totals for the PlantCAD model family">
+  <meta property="og:title" content="PlantCAD model downloads"/>
+  <meta property="og:description" content="Live all-time Hugging Face download totals for PlantCAD and PlantCaduceus models"/>
+  <meta property="og:url" content="https://plantcad.github.io/downloads.html"/>
+  <meta property="og:image" content="static/images/favicon.ico" />
+
+  <title>PlantCAD model downloads</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="static/js/downloads.js"></script>
+</head>
+<body class="downloads-page">
+<div class="dna-top-rule" aria-hidden="true">
+  <span class="dna-base-a"></span>
+  <span class="dna-base-c"></span>
+  <span class="dna-base-g"></span>
+  <span class="dna-base-t"></span>
+</div>
+<nav class="navbar site-navbar" role="navigation" aria-label="main navigation">
+  <div class="container is-max-desktop">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">PlantCAD</a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="plantcad-navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="plantcad-navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="index.html">Home</a>
+        <a class="navbar-item is-active" href="downloads.html">Downloads</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero downloads-hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="downloads-hero-grid">
+        <div class="downloads-hero-copy">
+          <p class="downloads-eyebrow">MODEL ADOPTION</p>
+          <h1 class="downloads-title">
+            <span id="downloads-total" class="downloads-total">0</span>
+            <span class="downloads-title-text">all-time model downloads</span>
+          </h1>
+          <div class="downloads-coverage-underline" aria-hidden="true"></div>
+          <p class="downloads-live-line">
+            <span class="downloads-live-dot" aria-hidden="true"></span>
+            <span id="downloads-live-copy">live from the Hugging Face API</span>
+          </p>
+          <p id="downloads-meta" class="downloads-meta"></p>
+        </div>
+        <div class="downloads-readout" aria-hidden="true">
+          <span>A</span><span>C</span><span>G</span><span>T</span>
+          <span>T</span><span>G</span><span>C</span><span>A</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div id="downloads-status" class="downloads-status" role="status" aria-live="polite">
+        Fetching live download data from the Hugging Face API...
+      </div>
+
+      <div id="downloads-results" class="is-hidden">
+        <div class="downloads-breakdown">
+          <div class="downloads-section-heading">
+            <p class="downloads-eyebrow">GENOME-BROWSER TRACKS</p>
+            <h2>Per-model breakdown</h2>
+          </div>
+          <div id="downloads-models" class="downloads-track-list" role="list" aria-label="Per-model all-time Hugging Face downloads"></div>
+        </div>
+
+        <div class="downloads-methodology">
+          <p class="downloads-eyebrow">REPRODUCIBILITY</p>
+          <p>
+            Data is fetched live from the Hugging Face API each time this page loads.
+            The data above was loaded at <time id="downloads-loaded-at"></time>.
+          </p>
+          <p class="downloads-endpoint">
+            <a id="downloads-endpoint-link" href="https://huggingface.co/api/models?author=kuleshov-group&expand[]=downloadsAllTime&limit=1000" target="_blank" rel="noopener">
+              https://huggingface.co/api/models?author=kuleshov-group&amp;expand[]=downloadsAllTime&amp;limit=1000
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content is-medium">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the&nbsp;<a href="https://nerfies.github.io" target="_blank">Nerfies</a>&nbsp;project page.
+            <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
