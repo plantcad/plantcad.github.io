@@ -198,27 +198,6 @@ button:focus-visible,
   animation: live-pulse 1.7s ease-out infinite;
 }
 
-.downloads-readout {
-  align-self: stretch;
-  border-left: 1px solid var(--line);
-  color: rgba(92, 107, 97, 0.48);
-  display: grid;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1.35rem;
-  font-weight: 700;
-  grid-template-columns: repeat(2, 1fr);
-  letter-spacing: 0;
-  line-height: 1;
-  min-height: 12rem;
-  padding-left: 1.25rem;
-}
-
-.downloads-readout span {
-  align-items: center;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-}
-
 .downloads-status {
   background: var(--surface);
   border-left: 4px solid var(--chloro);
@@ -542,10 +521,6 @@ button:focus-visible,
 
   .downloads-hero-grid {
     grid-template-columns: 1fr;
-  }
-
-  .downloads-readout {
-    display: none;
   }
 
   .downloads-total {
