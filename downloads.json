@@ -1,20 +1,20 @@
 {
-  "updated": "2026-10-17T12:12:48Z",
+  "updated": "2026-10-18T12:37:18Z",
   "source": "https://huggingface.co/api/models?author=kuleshov-group&expand[]=downloadsAllTime",
-  "total": 339120,
+  "total": 339218,
   "count": 7,
   "models": [
     {
       "id": "kuleshov-group/PlantCAD2-Small-l24-d0768",
-      "downloads": 128216
+      "downloads": 128264
     },
     {
       "id": "kuleshov-group/PlantCaduceus_l32",
-      "downloads": 65682
+      "downloads": 65690
     },
     {
       "id": "kuleshov-group/PlantCAD2-Large-l48-d1536",
-      "downloads": 46628
+      "downloads": 46663
     },
     {
       "id": "kuleshov-group/PlantCaduceus_l20",
@@ -26,7 +26,7 @@
     },
     {
       "id": "kuleshov-group/PlantCAD2-Medium-l48-d1024",
-      "downloads": 11107
+      "downloads": 11114
     },
     {
       "id": "kuleshov-group/PlantCaduceus_l24",
